@@ -8,14 +8,59 @@
     <title>Document</title>
     <!-- rtl bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <!-- main styles -->
     <link rel="stylesheet" href="./assets/css/main.min.css">
 </head>
 
 <body>
-    <p>سلام</p>
+    <!-- App -->
+    <section class="app">
+        <!-- header -->
+        <header class="header">
+            <!-- top header -->
+            <section class="top-header">
+                <section class="top-header__online-shop d-flex flex-row-reverse justify-content-between">
+                    <div class="top-header__menu-bar">
+                        <i data-feather="menu"></i>
+                    </div>
+                    <h3 class="top-header__logo">
+                        Online Shop
+                    </h3>
+                    <div class="top-header__guide">
+                        <i data-feather="help-circle"></i>
+                    </div>
+                </section>
+                <section class="top-header__inputs d-flex justify-content-start">
+                    <div class="top-header__basket">
+                        <i data-feather="shopping-bag"></i>
+                    </div>
+                    <div class="top-header__login flex-grow-1">
+                        <i data-feather="log-in"></i><span>ورود</span>
+                    </div>
+                    <div class="top-header__search">
+                        <input type="text" placeholder="جست و جو در آنلاین شاپ ..."> <i data-feather="search"></i>
+                    </div>
+                </section>
+            </section>
+            <!-- End top header -->
+            <!-- bottom header -->
+            <section class="bottom-header d-flex justify-content-end">
+                <div class="bottom-header__btn flex-grow-1">
+                    <i class="bottom-header__chevron" data-feather="chevron-left"></i>
+                </div>
+                <p class="bottom-header__text">لطفا شهر و استان خود را وارد کنید</p>
+                <i class="bottom-header__map" data-feather="map-pin"></i>
+            </section>
+            <!-- End bottom header -->
+        </header>
+        <!-- End header -->
+    </section>
+    <!-- End App -->
 </body>
 <!-- rtl bootstrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- feather icon -->
+<script src="https://unpkg.com/feather-icons"></script>
 <script src="./assets/js/main.js"></script>
 
 </html>
