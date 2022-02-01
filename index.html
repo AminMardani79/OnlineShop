@@ -18,28 +18,39 @@
         <!-- header -->
         <header class="header">
             <!-- top header -->
-            <section class="top-header">
-                <section class="top-header__online-shop d-flex flex-row-reverse justify-content-between">
-                    <div class="top-header__menu-bar">
-                        <i data-feather="menu"></i>
+            <section class="top-header px-2">
+                <section class="top-header__online-shop py-2 d-flex flex-row-reverse justify-content-between align-content-center">
+                    <div class="top-header__hambergur-menu">
+                        <button type="button" class="top-header__link">
+                            <i data-feather="menu"></i>
+                        </button>
                     </div>
-                    <h3 class="top-header__logo">
-                        Online Shop
+                    <h3 class="top-header__logo mb-0">
+                        <a class="top-header__logo-link" href="/">Online Shop</a>
                     </h3>
                     <div class="top-header__guide">
-                        <i data-feather="help-circle"></i>
+                        <button type="button" class="top-header__link">
+                            <i data-feather="help-circle"></i>
+                        </button>
                     </div>
                 </section>
-                <section class="top-header__inputs d-flex justify-content-start">
+                <section class="top-header__inputs py-2 d-flex justify-content-start">
                     <div class="top-header__basket">
-                        <i data-feather="shopping-bag"></i>
+                        <a class="top-header__basket-link" href="#">
+                            <i data-feather="shopping-bag"></i>
+                        </a>
                     </div>
-                    <div class="top-header__login flex-grow-1">
-                        <i data-feather="log-in"></i><span>ورود</span>
+                    <div class="top-header__login flex-grow-1 mx-3">
+                        <a class="top-header__login-link" href="#">
+                            <span class="top-header__login-text">ورود</span><i data-feather="log-in"></i>
+                        </a>
                     </div>
-                    <div class="top-header__search">
-                        <input type="text" placeholder="جست و جو در آنلاین شاپ ..."> <i data-feather="search"></i>
-                    </div>
+                    <form action="" class="top-header__search">
+                        <input class="top-header__input-search" type="text" placeholder="جست و جو در آنلاین شاپ ...">
+                        <button class="top-header__search-btn" type="submit">
+                            <i class="top-header__search-icon" data-feather="search"></i>
+                        </button>
+                    </form>
                 </section>
             </section>
             <!-- End top header -->

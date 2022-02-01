@@ -1,3 +1,5 @@
+@import "base";
+@import "components";
 @font-face {
     font-family: "IranYekan";
     src: url('../fonts/IRANYekanWebMedium.eot') format("eot"), url('../fonts/IRANYekanWebMedium.ttf') format("ttf"), url('../fonts/IRANYekanWebMedium.woff') format("woff");
@@ -5,6 +7,7 @@
 
 body {
     overflow-x: hidden;
+    background-color: $main-white;
 }
 
 * {
@@ -12,4 +15,30 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "IranYekan", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $main-dark;
+}
+
+svg {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $main-dark;
+}
+
+input {
+    border-radius: 8px;
+    padding: 5px;
+}
+
+input:focus {
+    outline: none;
 }

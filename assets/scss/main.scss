@@ -1,3 +1,64 @@
 @import "components";
 @import "layout";
 @import "base";
+.top-header {
+    /* top header online shop */
+    &__online-shop svg {
+        color: $main-dark;
+    }
+    &__online-shop,
+    &__inputs {
+        border-bottom: 1px solid $light-line;
+    }
+    &__logo-link {
+        color: $main-red;
+        font-weight: 700;
+        &:hover {
+            color: $main-red !important;
+        }
+    }
+    &__hambergur-menu,
+    &__logo,
+    &__guide {
+        @include flexCenter;
+    }
+    /* top header inputs */
+    &__login-text {
+        font-size: 13px;
+    }
+    &__login,
+    &__search {
+        position: relative;
+    }
+    &__login-link:hover {
+        @include textTransition;
+    }
+    &__basket-link:hover {
+        @include textTransition;
+    }
+    &__search-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__search svg {
+        color: $main-ldark;
+        width: 16px !important;
+        transition: all .2s ease-in-out;
+    }
+    &__input-search {
+        padding: 6px 10px;
+        padding-right: 40px;
+        border: 1px solid #f0f0f1;
+        background-color: #f0f0f1;
+        font-size: 12px;
+        direction: rtl;
+        width: 60vw;
+        color: $main-ldark;
+        transition: all .2s ease-in-out;
+        &:focus {
+            box-shadow: -3px 3px 8px #c9c9c9;
+        }
+    }
+}
