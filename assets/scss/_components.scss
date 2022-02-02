@@ -9,3 +9,19 @@
     transition: all .2s ease-in-out;
     color: $color;
 }
+
+@mixin absolute($Y:top, $X:right, $val1:0, $val2:0) {
+    position: absolute;
+    @if $Y==top {
+        top: $val1;
+    }
+    @else {
+        bottom: $val1;
+    }
+    @if $X==right {
+        right: $val2;
+    }
+    @else {
+        left: $val2;
+    }
+}
