@@ -98,6 +98,20 @@
 }
 
 @media screen and (max-width:991.99px) {
+    .main-overlay {
+        @include absolute;
+        background-color: $main-gray;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s ease-in;
+    }
+    .main-overlay_active {
+        visibility: visible;
+        opacity: .2;
+    }
     .mega-menu {
         position: fixed;
         top: 0;
@@ -105,23 +119,31 @@
         height: 100%;
         width: 270px;
         background-color: $main-white;
-        border-left: 1px solid $main-gray;
+        border-left: 1px solid $light-line;
         z-index: 100;
+        overflow-y: auto;
+        padding: 0 0.8rem;
+        box-shadow: 0 0 12px #ececee;
+        transform: translateX(105%);
+        transition: all .4s ease-in;
         &__mobile-logo {
             width: 100%;
             text-align: right;
             padding: 15px 0;
-            padding-right: 1.2rem;
+            padding-right: .4rem;
             color: $main-red;
+            border-bottom: 1px solid #ececee;
         }
         &__logo-text {
             font-size: 22px;
             font-weight: 900;
         }
         &__main-menu {
-            padding-right: 1.2rem;
+            padding-right: .4rem;
             font-size: 0.8rem;
             padding-bottom: 10px;
+            padding-top: 15px;
+            border-bottom: 1px solid #ececee;
         }
         &__main-item {
             width: 100%;
@@ -134,11 +156,11 @@
             font-size: 0.8rem;
         }
         &__order-menu {
-            padding-right: 1.2rem;
+            padding-right: .4rem;
         }
         &__order-title {
             display: inline-block;
-            padding-right: 1.2rem;
+            padding-right: .4rem;
             width: 100%;
             font-size: 0.9rem;
             font-weight: 700;
@@ -146,5 +168,59 @@
         &__order-item {
             padding: 9px 0;
         }
+        &__main-toggle {
+            width: 18px !important;
+            margin-left: 1.2rem;
+            cursor: pointer;
+            color: $main-ldark;
+        }
+        &__main-icon {
+            width: 18px !important;
+            margin-left: 8px;
+            &_red {
+                color: $main-red;
+            }
+            &_green {
+                color: $main-green;
+            }
+            &_purple {
+                color: $main-purple;
+            }
+            &_orange {
+                color: $main-orange;
+            }
+            &_blue {
+                color: $main-blue
+            }
+        }
+        &__main-text {
+            color: $main-ldark;
+            &:hover {
+                transition: all .2s ease-in-out;
+                color: $main-dark !important;
+            }
+        }
+        &__order-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__order-subicon {
+            width: 18px !important;
+        }
+        &__order-subicon {
+            margin-left: 1.2rem;
+            cursor: pointer;
+            color: $main-ldark;
+        }
+        &__order-text {
+            color: $main-ldark;
+            transition: all .2s ease-in-out;
+            &:hover {
+                color: $main-dark
+            }
+        }
+    }
+    .mega-menu_active {
+        transform: translateX(0);
     }
 }
