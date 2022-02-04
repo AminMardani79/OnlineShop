@@ -112,6 +112,12 @@
         visibility: visible;
         opacity: .2;
     }
+    .subMenu {
+        background-color: $light-line;
+        height: 0;
+        overflow-y: hidden;
+        transition: all .3s ease-in-out;
+    }
     .mega-menu {
         position: fixed;
         top: 0;
@@ -122,28 +128,28 @@
         border-left: 1px solid $light-line;
         z-index: 100;
         overflow-y: auto;
-        padding: 0 0.8rem;
         box-shadow: 0 0 12px #ececee;
         transform: translateX(105%);
         transition: all .4s ease-in;
         &__mobile-logo {
             width: 100%;
             text-align: right;
-            padding: 15px 0;
+            padding: 15px 1rem;
             padding-right: .4rem;
             color: $main-red;
             border-bottom: 1px solid #ececee;
+            width: 85%;
+            margin: 0 auto;
         }
         &__logo-text {
             font-size: 22px;
             font-weight: 900;
         }
         &__main-menu {
-            padding-right: .4rem;
+            padding-right: 0;
             font-size: 0.8rem;
             padding-bottom: 10px;
             padding-top: 15px;
-            border-bottom: 1px solid #ececee;
         }
         &__main-item {
             width: 100%;
@@ -160,7 +166,7 @@
         }
         &__order-title {
             display: inline-block;
-            padding-right: .4rem;
+            padding-right: 1rem;
             width: 100%;
             font-size: 0.9rem;
             font-weight: 700;
@@ -173,6 +179,20 @@
             margin-left: 1.2rem;
             cursor: pointer;
             color: $main-ldark;
+        }
+        &__main-content {
+            padding-right: 1rem;
+            cursor: pointer;
+        }
+        &__main-content_active &__main-toggle {
+            color: $main-red !important;
+            transform: rotate(180deg);
+        }
+        &__main-content_active &__main-text {
+            color: $main-red !important;
+            &:hover {
+                color: $main-red !important;
+            }
         }
         &__main-icon {
             width: 18px !important;
@@ -203,6 +223,8 @@
         &__order-content {
             display: flex;
             justify-content: space-between;
+            padding-right: 1rem;
+            cursor: pointer;
         }
         &__order-subicon {
             width: 18px !important;
@@ -217,6 +239,30 @@
             transition: all .2s ease-in-out;
             &:hover {
                 color: $main-dark
+            }
+        }
+        &__bottom-line {
+            width: 85%;
+            margin: 0 auto;
+            background-color: #bebebe;
+            margin-bottom: 20px;
+        }
+        &__main-sub {
+            @extend .subMenu;
+        }
+        &__main-sub_active {
+            height: 280px;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        &__main-sub-link {
+            color: $main-ldark;
+            font-size: 11px;
+            margin: 6px 0;
+            display: inline-block;
+            transition: all .2s ease-in-out;
+            &:hover {
+                color: $main-dark;
             }
         }
     }
