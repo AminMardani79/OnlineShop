@@ -118,6 +118,15 @@
         overflow-y: hidden;
         transition: all .3s ease-in-out;
     }
+    .chevron-icon {
+        width: 18px !important;
+        margin-left: 1.2rem;
+        color: $main-ldark;
+    }
+    .icon-active {
+        color: $main-red !important;
+        transform: rotate(180deg);
+    }
     .mega-menu {
         position: fixed;
         top: 0;
@@ -175,18 +184,14 @@
             padding: 9px 0;
         }
         &__main-toggle {
-            width: 18px !important;
-            margin-left: 1.2rem;
-            cursor: pointer;
-            color: $main-ldark;
+            @extend .chevron-icon;
         }
         &__main-content {
             padding-right: 1rem;
             cursor: pointer;
         }
         &__main-content_active &__main-toggle {
-            color: $main-red !important;
-            transform: rotate(180deg);
+            @extend .icon-active;
         }
         &__main-content_active &__main-text {
             color: $main-red !important;
@@ -216,8 +221,7 @@
         &__main-text {
             color: $main-ldark;
             &:hover {
-                transition: all .2s ease-in-out;
-                color: $main-dark !important;
+                @include textTransition($main-dark);
             }
         }
         &__order-content {
@@ -225,6 +229,12 @@
             justify-content: space-between;
             padding-right: 1rem;
             cursor: pointer;
+        }
+        &__order-content_active &__order-subicon {
+            @extend .icon-active;
+        }
+        &__order-content_active &__order-text {
+            color: $main-red !important;
         }
         &__order-subicon {
             width: 18px !important;
@@ -236,9 +246,8 @@
         }
         &__order-text {
             color: $main-ldark;
-            transition: all .2s ease-in-out;
             &:hover {
-                color: $main-dark
+                @include textTransition($main-dark);
             }
         }
         &__bottom-line {
@@ -260,9 +269,64 @@
             font-size: 11px;
             margin: 6px 0;
             display: inline-block;
-            transition: all .2s ease-in-out;
             &:hover {
-                color: $main-dark;
+                @include textTransition($main-dark);
+            }
+        }
+        &__order-sub {
+            @extend .subMenu;
+            transition: none;
+        }
+        &__order-sub_active {
+            height: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+        &__order-sub-text {
+            color: $main-ldark;
+            font-size: 11px;
+            display: inline-block;
+            margin: 6px 0;
+        }
+        &__order-sub-icon {
+            @extend .chevron-icon;
+            margin-left: 1.4rem;
+            width: 16px !important;
+        }
+        &__order-sub-content {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            &:hover .mega-menu__order-sub-text,
+            &:hover .mega-menu__order-sub-icon {
+                @include textTransition($main-dark);
+            }
+        }
+        &__order-sub-content_active:hover &__order-sub-text {
+            color: $main-red !important;
+        }
+        &__order-sub-content_active &__order-sub-icon {
+            @extend .icon-active;
+        }
+        &__order-sub-content_active &__order-sub-text {
+            color: $main-red;
+        }
+        &__order-innersub {
+            height: 0;
+            overflow-y: hidden;
+        }
+        &__order-innersub_active {
+            height: auto;
+        }
+        &__order-inner-item {
+            padding: 4px 0;
+        }
+        &__order-inner-link {
+            font-size: 10px;
+            color: $main-gray;
+            &:hover {
+                @include textTransition($main-dark);
             }
         }
     }
