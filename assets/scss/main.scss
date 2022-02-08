@@ -329,6 +329,17 @@
                 @include textTransition($main-dark);
             }
         }
+        &__all-orders-link {
+            color: $main-gray;
+            font-size: 10px;
+            &:hover {
+                @include textTransition($main-dark);
+            }
+        }
+        &__all-orders-icon {
+            width: 15px !important;
+            margin-right: 1px;
+        }
     }
     .mega-menu_active {
         transform: translateX(0);
