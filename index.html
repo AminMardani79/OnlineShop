@@ -18,32 +18,38 @@
         <!-- header -->
         <header class="header">
             <!-- top header -->
-            <section class="top-header px-2">
+            <section class="top-header px-2 d-lg-flex flex-row-reverse align-items-center">
                 <section class="top-header__online-shop py-2 d-flex flex-row-reverse justify-content-between align-content-center">
-                    <div class="top-header__hambergur-menu">
+                    <div class="top-header__hambergur-menu d-lg-none">
                         <button type="button" class="top-header__link">
                             <i data-feather="menu"></i>
                         </button>
                     </div>
-                    <h3 class="top-header__logo mb-0">
+                    <h3 class="top-header__logo mb-0 align-self-center">
                         <a class="top-header__logo-link" href="/">Online Shop</a>
                     </h3>
-                    <div class="top-header__guide">
+                    <div class="top-header__guide d-lg-none">
                         <button type="button" class="top-header__link">
                             <i data-feather="help-circle"></i>
                         </button>
                     </div>
                 </section>
-                <section class="top-header__inputs py-2 d-flex justify-content-start">
+                <section class="top-header__inputs py-2 d-flex justify-content-start align-items-center">
                     <div class="top-header__basket">
                         <a class="top-header__basket-link" href="#">
                             <i data-feather="shopping-bag"></i>
                         </a>
                     </div>
-                    <div class="top-header__login flex-grow-1 mx-3">
-                        <a class="top-header__login-link" href="#">
-                            <span class="top-header__login-text">ورود</span><i data-feather="log-in"></i>
-                        </a>
+                    <div class="top-header__login flex-grow-1 mx-4">
+                        <div class="top-header__login-register d-lg-flex align-items-center">
+                            <a class="top-header__register-link d-none d-lg-inline-block" href="#">
+                                <span class="top-header__register-text">ثبت نام</span>
+                            </a>
+                            <hr class="top-header__login-line d-none d-lg-inline-block mx-0">
+                            <a class="top-header__login-link" href="#">
+                                <span class="top-header__login-text">ورود</span><i data-feather="log-in"></i>
+                            </a>
+                        </div>
                     </div>
                     <form action="" class="top-header__search">
                         <input class="top-header__input-search" type="text" placeholder="جست و جو در آنلاین شاپ ...">

@@ -345,3 +345,42 @@
         transform: translateX(0);
     }
 }
+
+@media screen and (min-width: 991.999px) {
+    .top-header {
+        &__online-shop {
+            border-bottom: none;
+            width: 15%;
+        }
+        &__inputs {
+            border-bottom: none;
+            width: 85%;
+            padding-left: 1.5rem;
+        }
+        &__register-link {
+            font-size: 13px;
+            padding-right: .2rem;
+            &:hover {
+                @include textTransition($main-red);
+            }
+        }
+        &__login-line {
+            width: 15px;
+            background-color: $main-dark;
+            transform: rotate(90deg);
+        }
+        &__login-register {
+            border: 1px solid $light-line;
+            padding: 4px 10px;
+            width: 135px;
+            border-radius: 15px;
+        }
+        &__logo {
+            width: 100%;
+            text-align: center;
+        }
+        &__input-search {
+            width: 40vw;
+        }
+    }
+}
