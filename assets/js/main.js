@@ -111,5 +111,28 @@ function Responsive(x) {
                 }
             });
         }
+    } else {
+        (function() {
+            const orderMenu = document.querySelector('.mega-menu__order-menu');
+            const megamenuBtn = document.querySelector('.mega-menu__main-text_mega');
+            const hoverline = document.querySelector('.mega-menu__hover-line_mega');
+
+            megamenuBtn.parentNode.onmouseover = function() {
+                orderMenu.classList.add('mega-menu__order-menu_active');
+                hoverline.classList.add('mega-menu__hover-line_active');
+            }
+            megamenuBtn.parentNode.onmouseout = function() {
+                orderMenu.classList.remove('mega-menu__order-menu_active');
+                hoverline.classList.remove('mega-menu__hover-line_active');
+            }
+            orderMenu.onmouseover = function() {
+                orderMenu.classList.add('mega-menu__order-menu_active');
+                hoverline.classList.add('mega-menu__hover-line_active');
+            }
+            orderMenu.onmouseout = function() {
+                orderMenu.classList.remove('mega-menu__order-menu_active');
+                hoverline.classList.remove('mega-menu__hover-line_active');
+            }
+        })();
     }
 }
