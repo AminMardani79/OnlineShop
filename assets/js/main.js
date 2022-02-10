@@ -1,6 +1,7 @@
 /* feather icon */
 feather.replace();
-
+/* global variables */
+const overlay = document.querySelector('.main-overlay');
 
 /* header search */
 const searchInput = document.querySelector(".top-header__input-search");
@@ -16,12 +17,12 @@ let x = window.matchMedia('screen and (max-width:991.99px)');
 Responsive(x);
 x.addEventListener('change', Responsive);
 
+
 function Responsive(x) {
     if (x.matches) {
         /* megamenu slide */
         const megaOpen = document.querySelector(".top-header__hambergur-menu");
         const megaMenu = document.querySelector(".mega-menu");
-        const overlay = document.querySelector('.main-overlay');
         megaOpen.onclick = function() {
             megaMenu.classList.add('mega-menu_active');
             overlay.classList.add('main-overlay_active');
@@ -52,55 +53,50 @@ function Responsive(x) {
 
         /* sub megamenu */
         const subContents = document.querySelectorAll('.mega-menu__order-sub-content');
-        (function() {
-            const orders = document.querySelectorAll('.mega-menu__order-content');
-            orders.forEach(function(item) {
-                item.onclick = function() {
-                    let nextElement = item.nextElementSibling;
-                    let isOpen = nextElement.children[0].classList.contains('mega-menu__order-sub_active');
-                    if (nextElement != null) {
-                        if (isOpen) {
-                            nextElement.children[0].classList.remove('mega-menu__order-sub_active');
-                            item.classList.remove('mega-menu__order-content_active');
-                            CloseInnerSubs(subContents);
-                        } else {
-                            CloseSubMenus(orders);
-                            nextElement.children[0].classList.add('mega-menu__order-sub_active');
-                            item.classList.add("mega-menu__order-content_active");
-                        }
+        const orders = document.querySelectorAll('.mega-menu__order-content');
+        orders.forEach(function(item) {
+            item.onclick = function() {
+                let nextElement = item.nextElementSibling;
+                let isOpen = nextElement.children[0].classList.contains('mega-menu__order-sub_active');
+                if (nextElement != null) {
+                    if (isOpen) {
+                        nextElement.children[0].classList.remove('mega-menu__order-sub_active');
+                        item.classList.remove('mega-menu__order-content_active');
+                        CloseInnerSubs(subContents);
+                    } else {
+                        CloseSubMenus(orders);
+                        nextElement.children[0].classList.add('mega-menu__order-sub_active');
+                        item.classList.add("mega-menu__order-content_active");
+                    }
+                }
+            }
+        });
+
+        function CloseSubMenus(orders) {
+            orders.forEach((item) => {
+                let nextElement = item.nextElementSibling;
+                if (nextElement != null) {
+                    nextElement.children[0].classList.remove('mega-menu__order-sub_active');
+                    item.classList.remove('mega-menu__order-content_active');
+                }
+            });
+        }
+        subContents.forEach((item) => {
+            item.addEventListener('click', function() {
+                let nextElement = item.nextElementSibling;
+                let isOpen = nextElement.classList.contains('mega-menu__order-innersub_active');
+                if (nextElement != null) {
+                    if (isOpen) {
+                        nextElement.classList.remove('mega-menu__order-innersub_active');
+                        item.classList.remove('mega-menu__order-sub-content_active');
+                    } else {
+                        CloseInnerSubs(subContents);
+                        nextElement.classList.add('mega-menu__order-innersub_active');
+                        item.classList.add('mega-menu__order-sub-content_active');
                     }
                 }
             });
-
-            function CloseSubMenus(orders) {
-                orders.forEach((item) => {
-                    let nextElement = item.nextElementSibling;
-                    if (nextElement != null) {
-                        nextElement.children[0].classList.remove('mega-menu__order-sub_active');
-                        item.classList.remove('mega-menu__order-content_active');
-                    }
-                });
-            }
-
-        })();
-        (function() {
-            subContents.forEach((item) => {
-                item.addEventListener('click', function() {
-                    let nextElement = item.nextElementSibling;
-                    let isOpen = nextElement.classList.contains('mega-menu__order-innersub_active');
-                    if (nextElement != null) {
-                        if (isOpen) {
-                            nextElement.classList.remove('mega-menu__order-innersub_active');
-                            item.classList.remove('mega-menu__order-sub-content_active');
-                        } else {
-                            CloseInnerSubs(subContents);
-                            nextElement.classList.add('mega-menu__order-innersub_active');
-                            item.classList.add('mega-menu__order-sub-content_active');
-                        }
-                    }
-                });
-            });
-        })();
+        });
 
         function CloseInnerSubs(subContents) {
             subContents.forEach((item) => {
@@ -112,27 +108,31 @@ function Responsive(x) {
             });
         }
     } else {
-        (function() {
-            const orderMenu = document.querySelector('.mega-menu__order-menu');
+        /* 
+        const orderMenu = document.querySelector('.mega-menu__order-container');
             const megamenuBtn = document.querySelector('.mega-menu__main-text_mega');
             const hoverline = document.querySelector('.mega-menu__hover-line_mega');
 
             megamenuBtn.parentNode.onmouseover = function() {
-                orderMenu.classList.add('mega-menu__order-menu_active');
+                orderMenu.classList.add('mega-menu__order-container_active');
                 hoverline.classList.add('mega-menu__hover-line_active');
+                overlay.classList.add('main-overlay_d-active');
             }
             megamenuBtn.parentNode.onmouseout = function() {
-                orderMenu.classList.remove('mega-menu__order-menu_active');
+                orderMenu.classList.remove('mega-menu__order-container_active');
                 hoverline.classList.remove('mega-menu__hover-line_active');
+                overlay.classList.remove('main-overlay_d-active');
             }
             orderMenu.onmouseover = function() {
-                orderMenu.classList.add('mega-menu__order-menu_active');
+                orderMenu.classList.add('mega-menu__order-container_active');
                 hoverline.classList.add('mega-menu__hover-line_active');
+                overlay.classList.add('main-overlay_d-active');
             }
             orderMenu.onmouseout = function() {
-                orderMenu.classList.remove('mega-menu__order-menu_active');
+                orderMenu.classList.remove('mega-menu__order-container_active');
                 hoverline.classList.remove('mega-menu__hover-line_active');
+                overlay.classList.remove('main-overlay_d-active');
             }
-        })();
+        */
     }
 }
