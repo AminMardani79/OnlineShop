@@ -31,7 +31,11 @@ function Responsive(x) {
             megaMenu.classList.remove('mega-menu_active');
             overlay.classList.remove('main-overlay_active');
         }
-
+        window.onscroll = function() {
+                megaMenu.classList.remove('mega-menu_active');
+                overlay.classList.remove('main-overlay_active');
+            }
+            /* end megamenu slide */
 
         /* sub mainmenu */
         const mainLink = document.querySelectorAll('.mega-menu__main-content');
@@ -49,7 +53,7 @@ function Responsive(x) {
                 link.classList.toggle('mega-menu__main-content_active');
             }
         }
-
+        /* end sub mainmenu */
 
         /* sub megamenu */
         const subContents = document.querySelectorAll('.mega-menu__order-sub-content');
@@ -107,32 +111,63 @@ function Responsive(x) {
                 }
             });
         }
+        /* end sub megamenu */
     } else {
-        /* 
-        const orderMenu = document.querySelector('.mega-menu__order-container');
-            const megamenuBtn = document.querySelector('.mega-menu__main-text_mega');
-            const hoverline = document.querySelector('.mega-menu__hover-line_mega');
 
-            megamenuBtn.parentNode.onmouseover = function() {
-                orderMenu.classList.add('mega-menu__order-container_active');
-                hoverline.classList.add('mega-menu__hover-line_active');
-                overlay.classList.add('main-overlay_d-active');
-            }
-            megamenuBtn.parentNode.onmouseout = function() {
+        /* hover megamenu */
+        const orderMenu = document.querySelector('.mega-menu__order-container');
+        const megamenuBtn = document.querySelector('.mega-menu__main-text_mega');
+        const hoverline = document.querySelector('.mega-menu__hover-line_mega');
+
+        megamenuBtn.parentNode.onmouseover = function() {
+            orderMenu.classList.add('mega-menu__order-container_active');
+            hoverline.classList.add('mega-menu__hover-line_active');
+            overlay.classList.add('main-overlay_d-active');
+        }
+        megamenuBtn.parentNode.onmouseout = function() {
+            orderMenu.classList.remove('mega-menu__order-container_active');
+            hoverline.classList.remove('mega-menu__hover-line_active');
+            overlay.classList.remove('main-overlay_d-active');
+        }
+        orderMenu.onmouseover = function() {
+            orderMenu.classList.add('mega-menu__order-container_active');
+            hoverline.classList.add('mega-menu__hover-line_active');
+            overlay.classList.add('main-overlay_d-active');
+        }
+        orderMenu.onmouseout = function() {
                 orderMenu.classList.remove('mega-menu__order-container_active');
                 hoverline.classList.remove('mega-menu__hover-line_active');
                 overlay.classList.remove('main-overlay_d-active');
             }
-            orderMenu.onmouseover = function() {
-                orderMenu.classList.add('mega-menu__order-container_active');
-                hoverline.classList.add('mega-menu__hover-line_active');
-                overlay.classList.add('main-overlay_d-active');
+            /* end hover megamenu */
+
+        /* change orderItem */
+        const orderItem = document.querySelectorAll('.mega-menu__order-item');
+        const desktopSub = document.querySelector('.mega-menu__desktop-sub');
+        orderItem.forEach((item) => {
+            const orderSub = item.children[1].firstElementChild;
+            item.onmouseover = function() {
+                RemoveActiveOrders();
+                ActiveOrderItem(this);
+                changeDesktopChild(desktopSub, orderSub);
             }
-            orderMenu.onmouseout = function() {
-                orderMenu.classList.remove('mega-menu__order-container_active');
-                hoverline.classList.remove('mega-menu__hover-line_active');
-                overlay.classList.remove('main-overlay_d-active');
-            }
-        */
+        });
+
+        function RemoveActiveOrders() {
+            orderItem.forEach((item) => {
+                item.classList.remove('mega-menu__order-item_active');
+            });
+        }
+
+        function changeDesktopChild(desktopSub, orderSub) {
+            const clone = orderSub.cloneNode(true);
+            desktopSub.removeChild(desktopSub.children[0]);
+            desktopSub.appendChild(clone);
+        }
+
+        function ActiveOrderItem(item) {
+            item.classList.add('mega-menu__order-item_active');
+        }
+        /* end change orderItem */
     }
 }
