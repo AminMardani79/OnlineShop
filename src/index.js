@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/main.min.css";
 
 /* feather icon */
@@ -182,6 +183,7 @@ function Responsive(x) {
     /* end change orderItem */
   }
 }
+console.log("hello");
 if (module.hot) {
   module.hot.accept();
 }
