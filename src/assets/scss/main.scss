@@ -2,647 +2,682 @@
 @import "layout";
 @import "base";
 .top-header {
-    /* top header online shop */
-    &__online-shop svg {
-        color: $main-dark;
+  /* top header online shop */
+  &__online-shop svg {
+    color: $main-dark;
+  }
+  &__online-shop,
+  &__inputs {
+    border-bottom: 1px solid $light-line;
+  }
+  &__logo-link {
+    color: $main-red;
+    font-weight: 700;
+    &:hover {
+      color: $main-red !important;
     }
-    &__online-shop,
-    &__inputs {
-        border-bottom: 1px solid $light-line;
+  }
+  &__hambergur-menu,
+  &__logo,
+  &__guide {
+    @include flexCenter;
+  }
+  /* top header inputs */
+  &__login-text {
+    font-size: 13px;
+  }
+  &__login,
+  &__search {
+    position: relative;
+  }
+  &__login-link:hover {
+    @include textTransition;
+  }
+  &__basket-link:hover {
+    @include textTransition;
+  }
+  &__search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__search svg {
+    color: $main-ldark;
+    width: 16px !important;
+    transition: all 0.2s ease-in-out;
+  }
+  &__input-search {
+    padding: 6px 10px;
+    padding-right: 40px;
+    border: 1px solid #f0f0f1;
+    background-color: #f0f0f1;
+    font-size: 12px;
+    direction: rtl;
+    width: 60vw;
+    color: $main-ldark;
+    transition: all 0.2s ease-in-out;
+    &:focus {
+      box-shadow: -3px 3px 8px #c9c9c9;
     }
-    &__logo-link {
-        color: $main-red;
-        font-weight: 700;
-        &:hover {
-            color: $main-red !important;
-        }
-    }
-    &__hambergur-menu,
-    &__logo,
-    &__guide {
-        @include flexCenter;
-    }
-    /* top header inputs */
-    &__login-text {
-        font-size: 13px;
-    }
-    &__login,
-    &__search {
-        position: relative;
-    }
-    &__login-link:hover {
-        @include textTransition;
-    }
-    &__basket-link:hover {
-        @include textTransition;
-    }
-    &__search-btn {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    &__search svg {
-        color: $main-ldark;
-        width: 16px !important;
-        transition: all .2s ease-in-out;
-    }
-    &__input-search {
-        padding: 6px 10px;
-        padding-right: 40px;
-        border: 1px solid #f0f0f1;
-        background-color: #f0f0f1;
-        font-size: 12px;
-        direction: rtl;
-        width: 60vw;
-        color: $main-ldark;
-        transition: all .2s ease-in-out;
-        &:focus {
-            box-shadow: -3px 3px 8px #c9c9c9;
-        }
-    }
+  }
 }
 
 .bottom-header {
-    &__btn-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    &__text {
-        margin-left: auto;
-        font-size: 12px;
-        color: $main-dark;
-    }
-    &__map {
-        color: $main-orange;
-        width: 18px !important;
-        display: inline-block !important;
-        margin-left: 8px;
-    }
-    &__dot {
-        display: inline-block;
-        @include absolute(top, right, 0, 0);
-        width: 8px;
-        height: 8px;
-        border: 2px solid $main-white;
-        border-radius: 50%;
-        color: $main-red;
-        background-color: $main-red;
-        z-index: 10;
-    }
-    &__chevron {
-        color: $main-gray;
-        width: 18px;
-    }
+  &__btn-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  &__text {
+    margin-left: auto;
+    font-size: 12px;
+    color: $main-dark;
+  }
+  &__map {
+    color: $main-orange;
+    width: 18px !important;
+    display: inline-block !important;
+    margin-left: 8px;
+  }
+  &__dot {
+    display: inline-block;
+    @include absolute(top, right, 0, 0);
+    width: 8px;
+    height: 8px;
+    border: 2px solid $main-white;
+    border-radius: 50%;
+    color: $main-red;
+    background-color: $main-red;
+    z-index: 10;
+  }
+  &__chevron {
+    color: $main-gray;
+    width: 18px;
+  }
 }
 
-@media screen and (max-width:991.99px) {
-    .main-overlay {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: $main-gray;
-        z-index: 20;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .4s ease-in;
+@media screen and (max-width: 991.99px) {
+  .main-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $main-gray;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in;
+  }
+  .main-overlay_active {
+    visibility: visible;
+    opacity: 0.2;
+  }
+  .subMenu {
+    background-color: $light-line;
+    height: 0;
+    overflow-y: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .chevron-icon {
+    width: 18px !important;
+    margin-left: 1.2rem;
+    color: $main-ldark;
+  }
+  .icon-active {
+    color: $main-red !important;
+    transform: rotate(180deg);
+  }
+  .mega-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 270px;
+    background-color: $main-white;
+    border-left: 1px solid $light-line;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 0 0 12px #ececee;
+    transform: translateX(105%);
+    transition: all 0.4s ease-in;
+    &__mobile-logo {
+      width: 100%;
+      text-align: right;
+      padding: 15px 1rem;
+      padding-right: 0.4rem;
+      color: $main-red;
+      border-bottom: 1px solid #ececee;
+      width: 85%;
+      margin: 0 auto;
     }
-    .main-overlay_active {
-        visibility: visible;
-        opacity: .2;
+    &__logo-text {
+      font-size: 22px;
+      font-weight: 900;
     }
-    .subMenu {
-        background-color: $light-line;
-        height: 0;
-        overflow-y: hidden;
-        transition: all .3s ease-in-out;
+    &__main-menu {
+      padding-right: 0;
+      font-size: 0.8rem;
+      padding-bottom: 10px;
+      padding-top: 15px;
     }
-    .chevron-icon {
-        width: 18px !important;
-        margin-left: 1.2rem;
-        color: $main-ldark;
+    &__main-item {
+      width: 100%;
+      text-align: right;
+      padding: 9px 0;
     }
-    .icon-active {
+    &__order-container {
+      width: 100%;
+      text-align: right;
+      font-size: 0.8rem;
+    }
+    &__order-menu {
+      padding-right: 0.4rem;
+    }
+    &__order-title {
+      display: inline-block;
+      padding-right: 1rem;
+      width: 100%;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    &__order-item {
+      padding: 9px 0;
+    }
+    &__main-toggle {
+      @extend .chevron-icon;
+    }
+    &__main-content {
+      padding-right: 1rem;
+      cursor: pointer;
+    }
+    &__main-content_active &__main-toggle {
+      @extend .icon-active;
+    }
+    &__main-content_active &__main-text {
+      color: $main-red !important;
+      &:hover {
         color: $main-red !important;
-        transform: rotate(180deg);
+      }
     }
-    .mega-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 270px;
-        background-color: $main-white;
-        border-left: 1px solid $light-line;
-        z-index: 100;
-        overflow-y: auto;
-        box-shadow: 0 0 12px #ececee;
-        transform: translateX(105%);
-        transition: all .4s ease-in;
-        &__mobile-logo {
-            width: 100%;
-            text-align: right;
-            padding: 15px 1rem;
-            padding-right: .4rem;
-            color: $main-red;
-            border-bottom: 1px solid #ececee;
-            width: 85%;
-            margin: 0 auto;
-        }
-        &__logo-text {
-            font-size: 22px;
-            font-weight: 900;
-        }
-        &__main-menu {
-            padding-right: 0;
-            font-size: 0.8rem;
-            padding-bottom: 10px;
-            padding-top: 15px;
-        }
-        &__main-item {
-            width: 100%;
-            text-align: right;
-            padding: 9px 0;
-        }
-        &__order-container {
-            width: 100%;
-            text-align: right;
-            font-size: 0.8rem;
-        }
-        &__order-menu {
-            padding-right: .4rem;
-        }
-        &__order-title {
-            display: inline-block;
-            padding-right: 1rem;
-            width: 100%;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-        &__order-item {
-            padding: 9px 0;
-        }
-        &__main-toggle {
-            @extend .chevron-icon;
-        }
-        &__main-content {
-            padding-right: 1rem;
-            cursor: pointer;
-        }
-        &__main-content_active &__main-toggle {
-            @extend .icon-active;
-        }
-        &__main-content_active &__main-text {
-            color: $main-red !important;
-            &:hover {
-                color: $main-red !important;
-            }
-        }
-        &__main-icon {
-            width: 18px !important;
-            margin-left: 8px;
-            &_red {
-                color: $main-red;
-            }
-            &_green {
-                color: $main-green;
-            }
-            &_purple {
-                color: $main-purple;
-            }
-            &_orange {
-                color: $main-orange;
-            }
-            &_blue {
-                color: $main-blue
-            }
-        }
-        &__main-text {
-            color: $main-ldark;
-            &:hover {
-                @include textTransition($main-dark);
-            }
-        }
-        &__order-content {
-            display: flex;
-            justify-content: space-between;
-            padding-right: 1rem;
-            cursor: pointer;
-        }
-        &__order-content_active &__order-subicon {
-            @extend .icon-active;
-        }
-        &__order-content_active &__order-text {
-            color: $main-red !important;
-        }
-        &__order-subicon {
-            width: 18px !important;
-        }
-        &__order-subicon {
-            margin-left: 1.2rem;
-            cursor: pointer;
-            color: $main-ldark;
-        }
-        &__order-text {
-            color: $main-ldark;
-            &:hover {
-                @include textTransition($main-dark);
-            }
-        }
-        &__bottom-line {
-            width: 85%;
-            margin: 0 auto;
-            background-color: #bebebe;
-            margin-bottom: 20px;
-        }
-        &__main-sub {
-            @extend .subMenu;
-        }
-        &__main-sub_active {
-            height: 280px;
-            padding: 10px 0;
-            margin-top: 10px;
-        }
-        &__main-sub-link {
-            color: $main-ldark;
-            font-size: 11px;
-            margin: 6px 0;
-            display: inline-block;
-            &:hover {
-                @include textTransition($main-dark);
-            }
-        }
-        &__order-sub {
-            @extend .subMenu;
-            transition: none;
-        }
-        &__order-sub_active {
-            height: auto;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            margin-top: 10px;
-        }
-        &__order-sub-text {
-            color: $main-ldark;
-            font-size: 11px;
-            display: inline-block;
-            margin: 6px 0;
-        }
-        &__order-sub-icon {
-            @extend .chevron-icon;
-            margin-left: 1.4rem;
-            width: 16px !important;
-        }
-        &__order-sub-content {
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            &:hover .mega-menu__order-sub-text,
-            &:hover .mega-menu__order-sub-icon {
-                @include textTransition($main-dark);
-            }
-        }
-        &__order-sub-content_active:hover &__order-sub-text {
-            color: $main-red !important;
-        }
-        &__order-sub-content_active &__order-sub-icon {
-            @extend .icon-active;
-        }
-        &__order-sub-content_active &__order-sub-text {
-            color: $main-red;
-        }
-        &__order-innersub {
-            height: 0;
-            overflow-y: hidden;
-        }
-        &__order-innersub_active {
-            height: auto;
-        }
-        &__order-inner-item {
-            padding: 4px 0;
-        }
-        &__order-inner-link {
-            font-size: 10px;
-            color: $main-gray;
-            &:hover {
-                @include textTransition($main-dark);
-            }
-        }
-        &__all-orders-link {
-            color: $main-gray;
-            font-size: 10px;
-            &:hover {
-                @include textTransition($main-dark);
-            }
-        }
-        &__all-orders-icon {
-            width: 15px !important;
-            margin-right: 1px;
-        }
+    &__main-icon {
+      width: 18px !important;
+      margin-left: 8px;
+      &_red {
+        color: $main-red;
+      }
+      &_green {
+        color: $main-green;
+      }
+      &_purple {
+        color: $main-purple;
+      }
+      &_orange {
+        color: $main-orange;
+      }
+      &_blue {
+        color: $main-blue;
+      }
     }
-    .mega-menu_active {
-        transform: translateX(0);
+    &__main-text {
+      color: $main-ldark;
+      &:hover {
+        @include textTransition($main-dark);
+      }
     }
+    &__order-content {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 1rem;
+      cursor: pointer;
+    }
+    &__order-content_active &__order-subicon {
+      @extend .icon-active;
+    }
+    &__order-content_active &__order-text {
+      color: $main-red !important;
+    }
+    &__order-subicon {
+      width: 18px !important;
+    }
+    &__order-subicon {
+      margin-left: 1.2rem;
+      cursor: pointer;
+      color: $main-ldark;
+    }
+    &__order-text {
+      color: $main-ldark;
+      &:hover {
+        @include textTransition($main-dark);
+      }
+    }
+    &__bottom-line {
+      width: 85%;
+      margin: 0 auto;
+      background-color: #bebebe;
+      margin-bottom: 20px;
+    }
+    &__main-sub {
+      @extend .subMenu;
+    }
+    &__main-sub_active {
+      height: 280px;
+      padding: 10px 0;
+      margin-top: 10px;
+    }
+    &__main-sub-link {
+      color: $main-ldark;
+      font-size: 11px;
+      margin: 6px 0;
+      display: inline-block;
+      &:hover {
+        @include textTransition($main-dark);
+      }
+    }
+    &__order-sub {
+      @extend .subMenu;
+      transition: none;
+    }
+    &__order-sub_active {
+      height: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-top: 10px;
+    }
+    &__order-sub-text {
+      color: $main-ldark;
+      font-size: 11px;
+      display: inline-block;
+      margin: 6px 0;
+    }
+    &__order-sub-icon {
+      @extend .chevron-icon;
+      margin-left: 1.4rem;
+      width: 16px !important;
+    }
+    &__order-sub-content {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      &:hover .mega-menu__order-sub-text,
+      &:hover .mega-menu__order-sub-icon {
+        @include textTransition($main-dark);
+      }
+    }
+    &__order-sub-content_active:hover &__order-sub-text {
+      color: $main-red !important;
+    }
+    &__order-sub-content_active &__order-sub-icon {
+      @extend .icon-active;
+    }
+    &__order-sub-content_active &__order-sub-text {
+      color: $main-red;
+    }
+    &__order-innersub {
+      height: 0;
+      overflow-y: hidden;
+    }
+    &__order-innersub_active {
+      height: auto;
+    }
+    &__order-inner-item {
+      padding: 4px 0;
+    }
+    &__order-inner-link {
+      font-size: 10px;
+      color: $main-gray;
+      &:hover {
+        @include textTransition($main-dark);
+      }
+    }
+    &__all-orders-link {
+      color: $main-gray;
+      font-size: 10px;
+      &:hover {
+        @include textTransition($main-dark);
+      }
+    }
+    &__all-orders-icon {
+      width: 15px !important;
+      margin-right: 1px;
+    }
+  }
+  .mega-menu_active {
+    transform: translateX(0);
+  }
 }
 
 @media screen and (min-width: 991.999px) {
-    .header {
-        height: 107px;
+  .header {
+    height: 107px;
+  }
+  .header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: $main-white;
+    border-bottom: 1px solid $light-line;
+    box-shadow: 0 0 5px $light-line;
+    z-index: 100;
+  }
+  .top-header {
+    &__online-shop {
+      border-bottom: none;
+      width: 15%;
     }
-    .header-container {
-        position: fixed;
-        top: 0;
+    &__inputs {
+      border-bottom: none;
+      width: 85%;
+      padding-left: 1rem;
+    }
+    &__register-link {
+      font-size: 13px;
+      padding-right: 0.2rem;
+      &:hover {
+        @include textTransition($main-red);
+      }
+    }
+    &__login-line {
+      width: 15px;
+      background-color: $main-dark;
+      transform: rotate(90deg);
+    }
+    &__login-register {
+      border: 1px solid $light-line;
+      padding: 4px 10px;
+      width: 135px;
+      border-radius: 15px;
+    }
+    &__logo {
+      width: 100%;
+      text-align: center;
+      padding-right: 1rem;
+    }
+    &__input-search {
+      width: 40vw;
+    }
+  }
+  .bottom-header {
+    &__text {
+      margin-left: 0.3rem;
+    }
+    &__btn {
+      padding-bottom: 1.2rem !important;
+      padding-left: 1.5rem !important;
+    }
+  }
+  .main-overlay {
+    position: fixed;
+    top: 107px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main-gray;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  .main-overlay_d-active {
+    opacity: 0.4;
+    visibility: visible;
+    z-index: 50;
+  }
+  .mega-menu {
+    width: 210rem;
+    &__main-menu {
+      margin-bottom: 0;
+      height: 100%;
+      padding-right: 1.5rem !important;
+    }
+    &__main-text {
+      font-size: 13px;
+      display: inline-block;
+      position: relative;
+      padding: 4px 0;
+      &:hover {
+        color: $main-dark;
+      }
+      &:hover .mega-menu__hover-line {
         width: 100%;
-        background-color: $main-white;
-        border-bottom: 1px solid $light-line;
-        box-shadow: 0 0 5px $light-line;
-        z-index: 100;
+      }
     }
-    .top-header {
-        &__online-shop {
-            border-bottom: none;
-            width: 15%;
-        }
-        &__inputs {
-            border-bottom: none;
-            width: 85%;
-            padding-left: 1rem;
-        }
-        &__register-link {
-            font-size: 13px;
-            padding-right: .2rem;
-            &:hover {
-                @include textTransition($main-red);
-            }
-        }
-        &__login-line {
-            width: 15px;
-            background-color: $main-dark;
-            transform: rotate(90deg);
-        }
-        &__login-register {
-            border: 1px solid $light-line;
-            padding: 4px 10px;
-            width: 135px;
-            border-radius: 15px;
-        }
-        &__logo {
-            width: 100%;
-            text-align: center;
-            padding-right: 1rem;
-        }
-        &__input-search {
-            width: 40vw;
-        }
+    &__main-text_mega {
+      font-weight: bolder !important;
+      cursor: pointer;
     }
-    .bottom-header {
-        &__text {
-            margin-left: .3rem;
-        }
-        &__btn {
-            padding-bottom: 1.2rem !important;
-            padding-left: 1.5rem !important;
-        }
+    &__hover-line {
+      height: 2px;
+      width: 0;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      background-color: $main-red;
+      transition: width 0.2s linear;
     }
-    .main-overlay {
-        position: fixed;
-        top: 107px;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $main-gray;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .2s ease-in-out;
+    &__hover-line_active {
+      width: 100% !important;
     }
-    .main-overlay_d-active {
-        opacity: .4;
-        visibility: visible;
-        z-index: 50;
+    &__main-icon {
+      width: 17px !important;
+      &_red {
+        color: $main-red;
+      }
+      &_green {
+        color: $main-green;
+      }
+      &_purple {
+        color: $main-purple;
+      }
+      &_orange {
+        color: $main-orange;
+      }
+      &_blue {
+        color: $main-blue;
+      }
+      &_black {
+        color: $main-dark;
+      }
     }
-    .mega-menu {
-        width: 210rem;
-        &__main-menu {
-            margin-bottom: 0;
-            height: 100%;
-            padding-right: 1.5rem !important;
-        }
-        &__main-text {
-            font-size: 13px;
-            display: inline-block;
-            position: relative;
-            padding: 4px 0;
-            &:hover {
-                color: $main-dark;
-            }
-            &:hover .mega-menu__hover-line {
-                width: 100%;
-            }
-        }
-        &__main-text_mega {
-            font-weight: bolder !important;
-            cursor: pointer;
-        }
-        &__hover-line {
-            height: 2px;
-            width: 0;
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            background-color: $main-red;
-            transition: width .2s linear;
-        }
-        &__hover-line_active {
-            width: 100% !important;
-        }
-        &__main-icon {
-            width: 17px !important;
-            &_red {
-                color: $main-red;
-            }
-            &_green {
-                color: $main-green;
-            }
-            &_purple {
-                color: $main-purple;
-            }
-            &_orange {
-                color: $main-orange;
-            }
-            &_blue {
-                color: $main-blue
-            }
-            &_black {
-                color: $main-dark;
-            }
-        }
-        &__main-item {
-            margin: 0 8px;
-            height: 100%;
-        }
-        &__order-container {
-            position: absolute;
-            top: 100px;
-            right: 50%;
-            transform: translateX(50%);
-            background-color: $main-white;
-            border: 1px solid $light-line;
-            box-shadow: 0 5px 14px $light-line;
-            width: 97%;
-            height: auto;
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: all .2s ease-in-out;
-            display: flex;
-            justify-content: end;
-            flex-direction: row-reverse;
-            border-radius: 0 0 10px 10px;
-        }
-        &__order-container_active {
-            position: absolute;
-            visibility: visible !important;
-            opacity: 1 !important;
-            top: 107px;
-        }
-        &__order-menu {
-            width: 22%;
-            padding-right: 0;
-            border-left: 1px solid $light-line;
-            margin-bottom: 0 !important;
-        }
-        &__order-item {
-            padding: 12px 3rem 12px 0;
-            cursor: pointer;
-            border: 1px solid $main-white;
-            &:hover {
-                background-color: #ececee;
-                border: 1px solid $light-line;
-            }
-            &:hover .mega-menu__order-text,
-            &:hover .mega-menu__desktop-order-icon {
-                color: $main-red !important;
-            }
-        }
-        &__order-item_active {
-            background-color: #ececee;
-            border: 1px solid $light-line;
-            .mega-menu__order-text,
-            .mega-menu__desktop-order-icon {
-                color: $main-red !important;
-            }
-        }
-        &__sub {
-            display: none;
-        }
-        &__order-subicon {
-            display: none;
-        }
-        &__order-content {
-            text-align: right;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-        }
-        &__order-text {
-            font-size: 13px;
-            color: $main-ldark;
-            padding-right: .5rem;
-        }
-        &__desktop-order-icon {
-            color: $main-ldark;
-            font-size: 12px;
-        }
-        &__desktop-sub {
-            width: 100%;
-            height: 100%;
-            padding: 40px 0 20px 0;
-        }
-        &__order-sub {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            direction: rtl;
-            height: 400px;
-        }
-        &__order-sub-text {
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 900;
-            color: $main-dark;
-            position: relative;
-            padding-right: 6px;
-            padding-bottom: 10px;
-            &::before {
-                content: '';
-                @include absolute;
-                width: 2px;
-                height: 60%;
-                background-color: $main-red;
-            }
-        }
-        &__order-sub-icon {
-            width: 16px !important;
-            color: $main-dark;
-        }
-        &__order-sub>&__order-sub-item:first-child {
-            padding: 0 0 15px 0;
-            font-size: 12px;
-            font-weight: 700;
-            .mega-menu__order-sub-text {
-                color: $main-gray;
-                display: flex;
-                align-items: center;
-                &::before {
-                    content: none !important;
-                }
-                .mega-menu__order-sub-icon {
-                    width: 16px !important;
-                    color: $main-gray;
-                }
-            }
-        }
-        &__all-orders {
-            .mega-menu__all-orders-link {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: start;
-                align-items: center;
-                font-size: 12px;
-                font-weight: 700;
-                color: $text-gray;
-                &:hover {
-                    color: $main-red;
-                    .mega-menu__all-orders-icon {
-                        color: $main-red;
-                    }
-                }
-                .mega-menu__all-orders-icon {
-                    width: 16px !important;
-                    color: $text-gray;
-                }
-            }
-        }
-        &__order-innermenu {
-            padding-bottom: 4px;
-        }
-        &__order-inner-link {
-            font-size: 12px;
-            color: $main-gray;
-            font-weight: 300;
-            padding: 5px 0;
-            display: inline-block;
-            &:hover {
-                color: $main-red;
-            }
-        }
-        &__order-sub-item_nosub &__order-sub-text {
-            &:hover {
-                color: $main-red !important;
-            }
-        }
+    &__main-item {
+      margin: 0 8px;
+      height: 100%;
     }
+    &__order-container {
+      position: absolute;
+      top: 100px;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: $main-white;
+      border: 1px solid $light-line;
+      box-shadow: 0 5px 14px $light-line;
+      width: 97%;
+      height: auto;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      justify-content: end;
+      flex-direction: row-reverse;
+      border-radius: 0 0 10px 10px;
+    }
+    &__order-container_active {
+      position: absolute;
+      visibility: visible !important;
+      opacity: 1 !important;
+      top: 107px;
+    }
+    &__order-menu {
+      width: 22%;
+      padding-right: 0;
+      border-left: 1px solid $light-line;
+      margin-bottom: 0 !important;
+    }
+    &__order-item {
+      padding: 12px 3rem 12px 0;
+      cursor: pointer;
+      border: 1px solid $main-white;
+      &:hover {
+        background-color: #ececee;
+        border: 1px solid $light-line;
+      }
+      &:hover .mega-menu__order-text,
+      &:hover .mega-menu__desktop-order-icon {
+        color: $main-red !important;
+      }
+    }
+    &__order-item_active {
+      background-color: #ececee;
+      border: 1px solid $light-line;
+      .mega-menu__order-text,
+      .mega-menu__desktop-order-icon {
+        color: $main-red !important;
+      }
+    }
+    &__sub {
+      display: none;
+    }
+    &__order-subicon {
+      display: none;
+    }
+    &__order-content {
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+    }
+    &__order-text {
+      font-size: 13px;
+      color: $main-ldark;
+      padding-right: 0.5rem;
+    }
+    &__desktop-order-icon {
+      color: $main-ldark;
+      font-size: 12px;
+    }
+    &__desktop-sub {
+      width: 100%;
+      height: 100%;
+      padding: 40px 0 20px 0;
+    }
+    &__order-sub {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      direction: rtl;
+      height: 400px;
+    }
+    &__order-sub-text {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 900;
+      color: $main-dark;
+      position: relative;
+      padding-right: 6px;
+      padding-bottom: 10px;
+      &::before {
+        content: "";
+        @include absolute;
+        width: 2px;
+        height: 60%;
+        background-color: $main-red;
+      }
+    }
+    &__order-sub-icon {
+      width: 16px !important;
+      color: $main-dark;
+    }
+    &__order-sub > &__order-sub-item:first-child {
+      padding: 0 0 15px 0;
+      font-size: 12px;
+      font-weight: 700;
+      .mega-menu__order-sub-text {
+        color: $main-gray;
+        display: flex;
+        align-items: center;
+        &::before {
+          content: none !important;
+        }
+        .mega-menu__order-sub-icon {
+          width: 16px !important;
+          color: $main-gray;
+        }
+      }
+    }
+    &__all-orders {
+      .mega-menu__all-orders-link {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        color: $text-gray;
+        &:hover {
+          color: $main-red;
+          .mega-menu__all-orders-icon {
+            color: $main-red;
+          }
+        }
+        .mega-menu__all-orders-icon {
+          width: 16px !important;
+          color: $text-gray;
+        }
+      }
+    }
+    &__order-innermenu {
+      padding-bottom: 4px;
+    }
+    &__order-inner-link {
+      font-size: 12px;
+      color: $main-gray;
+      font-weight: 300;
+      padding: 5px 0;
+      display: inline-block;
+      &:hover {
+        color: $main-red;
+      }
+    }
+    &__order-sub-item_nosub &__order-sub-text {
+      &:hover {
+        color: $main-red !important;
+      }
+    }
+  }
+}
+
+// swiper
+.swiper {
+  width: 100%;
+  height: 400px;
+  &-slide {
+    width: 100%;
+    @include twoDimensionCenter;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      cursor: grab;
+    }
+    img {
+      width: 100vw;
+      height: 100%;
+    }
+  }
+  &-pagination {
+    display: flex;
+    justify-content: end;
+    padding-right: 15px;
+  }
+}
+@media screen and (max-width: 991.99px) {
+  .swiper {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 539.99px) {
+  .swiper {
+    height: 200px;
+  }
 }

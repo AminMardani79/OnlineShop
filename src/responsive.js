@@ -119,7 +119,7 @@ export const Responsive = (x, overlay) => {
     orderItem.forEach((item) => {
       const orderSub = item.children[1].firstElementChild;
       item.onmouseover = function () {
-        RemoveActiveOrders();
+        RemoveActiveOrders(orderItem);
         ActiveOrderItem(this);
         changeDesktopChild(desktopSub, orderSub);
       };

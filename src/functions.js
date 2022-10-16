@@ -24,7 +24,7 @@ export const CloseInnerSubs = (subContents) => {
     }
   });
 };
-export const RemoveActiveOrders = () => {
+export const RemoveActiveOrders = (orderItem) => {
   orderItem.forEach((item) => {
     item.classList.remove("mega-menu__order-item_active");
   });
