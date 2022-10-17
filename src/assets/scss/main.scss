@@ -681,3 +681,25 @@
     height: 200px;
   }
 }
+// Options
+.options {
+  padding: 40px 8vw;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  &__item a {
+    &:hover {
+      color: #000;
+    }
+    @include flexCenter;
+    img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 8px;
+    }
+    span {
+      color: $text-gray;
+      font-size: 13px;
+    }
+  }
+}

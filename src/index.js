@@ -27,7 +27,6 @@ Responsive(x, overlay);
 x.addEventListener("change", Responsive);
 
 new Swiper(".swiper", {
-  // Optional parameters
   direction: "horizontal",
   loop: true,
   allowTouchMove: true,
@@ -36,7 +35,6 @@ new Swiper(".swiper", {
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
-  // If we need pagination
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

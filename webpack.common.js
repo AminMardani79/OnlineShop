@@ -3,8 +3,8 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.js",
   target: "web",
-
   devServer: {
+    watchFiles: ["src/*.html"],
     port: 8080,
     static: {
       directory: path.join(__dirname, "dist"),
