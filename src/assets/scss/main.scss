@@ -648,10 +648,10 @@
 }
 
 // swiper
-.swiper {
+.bannerSwiper {
   width: 100%;
   height: 400px;
-  &-slide {
+  .swiper-slide {
     width: 100%;
     @include twoDimensionCenter;
     &:hover {
@@ -665,25 +665,28 @@
       height: 100%;
     }
   }
-  &-pagination {
+  .swiper-pagination {
     display: flex;
     justify-content: end;
     padding-right: 15px;
   }
 }
 @media screen and (max-width: 991.99px) {
-  .swiper {
+  .bannerSwiper {
     height: 300px;
   }
 }
 @media screen and (max-width: 539.99px) {
-  .swiper {
+  .bannerSwiper {
     height: 200px;
   }
 }
+.container {
+  padding: 0 8vw;
+}
 // Options
 .options {
-  padding: 40px 8vw;
+  padding: 40px 0;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -700,6 +703,45 @@
     span {
       color: $text-gray;
       font-size: 13px;
+    }
+  }
+}
+// Latest Products
+.latest-products {
+  padding: 20px 10px;
+  background-color: $main-red;
+  border-radius: 20px;
+  margin: 20px 0;
+  &__swiper {
+    height: 280px;
+    .swiper-slide {
+      background-color: $main-white;
+      img {
+        width: 100%;
+        height: 35%;
+      }
+      &__content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px 8px;
+        span:first-child {
+          font-size: 14px;
+          color: $text-gray;
+          direction: rtl;
+        }
+        span:last-child {
+          background-color: $main-red;
+          padding: 0 6px;
+          border-radius: 8px;
+          display: inline-block;
+          font-size: 12px;
+          @include twoDimensionCenter;
+          color: $main-white;
+          padding-bottom: 0;
+          vertical-align: middle;
+        }
+      }
     }
   }
 }
