@@ -682,7 +682,7 @@
   }
 }
 .container {
-  padding: 0 8vw;
+  padding: 0 7vw;
 }
 // Options
 .options {
@@ -773,6 +773,21 @@
     font-size: 14px;
   }
 }
+
+.brands {
+  &__swiper {
+    height: 200px;
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+      @include twoDimensionCenter;
+    }
+  }
+  &__image {
+    width: 100px;
+    height: 100px;
+  }
+}
 @media screen and (max-width: 991.99px) {
   .categories {
     &__image {
@@ -781,6 +796,12 @@
     }
     &__items {
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+  }
+  .brands {
+    &__image {
+      width: 80px;
+      height: 80px;
     }
   }
 }
