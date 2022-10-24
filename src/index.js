@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/carousel";
 import "./assets/css/main.min.css";
 import "./swiper";
+import "@fortawesome/fontawesome-free";
 // functions
 import { Responsive } from "./responsive";
 
