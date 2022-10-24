@@ -40,3 +40,8 @@ export const ActiveOrderItem = (item) => {
   item.classList.add("mega-menu__order-item_active");
 };
 // end mega-menu functions
+// footer
+export const scrollUp = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+// end footer

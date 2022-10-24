@@ -874,11 +874,11 @@
     .footer__form-input {
       flex: 1;
       border: 1px solid #e1e1e1;
-      border-radius: 5px;
+      border-radius: 20px;
       background-color: #e2e2e2;
       direction: rtl;
       color: $main-gray;
-      padding: 2px 8px;
+      padding: 2px 15px;
       height: 45px;
       &::placeholder {
         text-align: right;
